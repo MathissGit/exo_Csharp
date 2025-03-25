@@ -19,12 +19,8 @@ namespace Mediatheque.Core.Model
 
         public bool Emprunte(string emprunteur)
         {
-            if (!string.IsNullOrEmpty(Emprunteur))
-            {
-                return false;
-            }
-            Emprunteur = emprunteur;
-            return true;
+            return string.IsNullOrEmpty(Emprunteur) ? (Emprunteur = emprunteur) != null : false;
+
         }
 
     }
